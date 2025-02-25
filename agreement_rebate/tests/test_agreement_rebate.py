@@ -15,6 +15,15 @@ class TestAgreementRebate(TransactionCase):
     def setUpClass(cls):
         super().setUpClass()
         cls.env = cls.env(context=dict(cls.env.context, tracking_disable=True))
+        if not cls.env.company.chart_template_id:
+            # Load a CoA if there's none in current company
+            coa = cls.env.ref("l10n_generic_coa.configurable_chart_template", False)
+            if not coa:
+                # Load the first available CoA
+                coa = cls.env["account.chart.template"].search(
+                    [("visible", "=", True)], limit=1
+                )
+            coa.try_loading(company=cls.env.company, install_demo=False)
         cls.Partner = cls.env["res.partner"]
         cls.ProductTemplate = cls.env["product.template"]
         cls.Product = cls.env["product.product"]
@@ -351,7 +360,7 @@ class TestAgreementRebate(TransactionCase):
 
     def _create_invoice_wizard(self):
         sale_journal = self.env["account.journal"].search(
-            [("type", "=", "sale")], limit=1
+            [("type", "=", "sale"), ("company_id", "=", self.env.company.id)], limit=1
         )
         wiz_create_invoice_form = Form(self.env["agreement.invoice.create.wiz"])
         wiz_create_invoice_form.date_from = "2022-01-01"
