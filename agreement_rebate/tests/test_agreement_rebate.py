@@ -8,7 +8,6 @@ from odoo import fields
 from odoo.tests.common import Form, TransactionCase, tagged
 
 
-@freeze_time("2022-02-01 09:30:00")
 @tagged("-at_install", "post_install")
 class TestAgreementRebate(TransactionCase):
     @classmethod
@@ -117,9 +116,7 @@ class TestAgreementRebate(TransactionCase):
         move_form = Form(
             cls.env["account.move"].with_context(default_move_type="out_invoice")
         )
-        move_form.invoice_date = fields.Date.from_string(
-            "{}-01-01".format(fields.Date.today().year)
-        )
+        move_form.invoice_date = fields.Date.from_string("2022-01-01")
         move_form.ref = "Test Customer Invoice"
         move_form.partner_id = partner
         products = (
@@ -142,6 +139,7 @@ class TestAgreementRebate(TransactionCase):
                     line_form.price_unit = 500.00
 
     # Create Agreements rebates for customers for all available types
+    @freeze_time("2022-02-01 09:30:00")
     def create_agreements_rebate(self, rebate_type, partner):
         agreement = self.Agreement.create(
             {
@@ -371,6 +369,7 @@ class TestAgreementRebate(TransactionCase):
         wiz_create_invoice_form.agreement_type_ids.add(self.agreement_type)
         return wiz_create_invoice_form.save()
 
+    @freeze_time("2022-02-01 09:30:00")
     def test_invoice_agreements(self):
         # Create some rebate settlements
         agreement = self._create_agreement_product_filter("section_total")
