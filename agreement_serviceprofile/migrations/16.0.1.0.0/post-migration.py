@@ -6,5 +6,5 @@ def migrate(env, version):
     openupgrade.logged_query(
         env.cr,
         """UPDATE product_template SET detailed_type = 'serviceprofile'
-        WHERE is_service_profile IS TRUE""",
+        WHERE is_serviceprofile IS TRUE""",
     )
