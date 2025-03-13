@@ -26,7 +26,7 @@ addon | version | maintainers | summary
 [agreement_maintenance](agreement_maintenance/) | 16.0.1.0.0 | [![max3903](https://github.com/max3903.png?size=30px)](https://github.com/max3903) | Manage maintenance agreements and contracts
 [agreement_rebate](agreement_rebate/) | 16.0.1.0.4 |  | Rebate in agreements
 [agreement_sale](agreement_sale/) | 16.0.1.0.0 | [![alexis-via](https://github.com/alexis-via.png?size=30px)](https://github.com/alexis-via) [![bealdav](https://github.com/bealdav.png?size=30px)](https://github.com/bealdav) | Agreement on sales
-[agreement_serviceprofile](agreement_serviceprofile/) | 16.0.1.0.0 | [![max3903](https://github.com/max3903.png?size=30px)](https://github.com/max3903) | Adds an Agreement Service Profile object
+[agreement_serviceprofile](agreement_serviceprofile/) | 16.0.1.0.1 | [![max3903](https://github.com/max3903.png?size=30px)](https://github.com/max3903) | Adds an Agreement Service Profile object
 
 [//]: # (end addons)
 
