@@ -466,9 +466,15 @@ class Agreement(models.Model):
         return ["stage_id"]
 
     @api.model
-    def get_view(self, view_id=None, view_type=False, toolbar=False, submenu=False):
+    def get_view(
+        self, view_id=None, view_type=False, toolbar=False, submenu=False, **options
+    ):
         res = super().get_view(
-            view_id=view_id, view_type=view_type, toolbar=toolbar, submenu=submenu
+            view_id=view_id,
+            view_type=view_type,
+            toolbar=toolbar,
+            submenu=submenu,
+            **options
         )
         # Readonly fields
         if view_type == "form":
