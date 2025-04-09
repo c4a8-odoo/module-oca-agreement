@@ -101,6 +101,8 @@ Contributors
 * Sandip Mangukiya <smangukiya@opensourceintegrators.com>
 * Yves Goldberg <yves@ygol.com>
 * Tharathip Chaweewongphan <tharathipc@ecosoft.co.th>
+* `APSL-Nagarro <https://apsl.tech>`_:
+    * Antoni Marroig <amarroig@apsl.net>
 
 Other credits
 ~~~~~~~~~~~~~

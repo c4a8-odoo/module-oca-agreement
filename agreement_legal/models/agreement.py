@@ -466,21 +466,16 @@ class Agreement(models.Model):
         return ["stage_id"]
 
     @api.model
-    def get_view(
-        self, view_id=None, view_type=False, toolbar=False, submenu=False, **options
-    ):
-        res = super().get_view(
-            view_id=view_id,
-            view_type=view_type,
-            toolbar=toolbar,
-            submenu=submenu,
-            **options
-        )
+    def get_view(self, view_id=None, view_type=False, **options):
+        res = super().get_view(view_id=view_id, view_type=view_type, **options)
         # Readonly fields
         if view_type == "form":
             doc = etree.XML(res["arch"])
             for node in doc.xpath("//field"):
-                if node.attrib.get("name") in self._exclude_readonly_field():
+                if (
+                    node in doc.xpath("//tree/field")
+                    or node.attrib.get("name") in self._exclude_readonly_field()
+                ):
                     continue
                 attrs = ast.literal_eval(node.attrib.get("attrs", "{}"))
                 if attrs:
