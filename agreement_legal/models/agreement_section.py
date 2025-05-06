@@ -9,16 +9,20 @@ class AgreementSection(models.Model):
     _description = "Agreement Sections"
     _order = "sequence"
 
-    name = fields.Char(required=True)
-    title = fields.Char(help="The title is displayed on the PDF. The name is not.")
+    name = fields.Char(required=True, translate=True)
+    title = fields.Char(
+        help="The title is displayed on the PDF. The name is not.", translate=True
+    )
     sequence = fields.Integer()
     agreement_id = fields.Many2one("agreement", string="Agreement", ondelete="cascade")
     clauses_ids = fields.One2many(
         "agreement.clause", "section_id", string="Clauses", copy=True
     )
-    content = fields.Html(string="Section Content")
+    content = fields.Html(string="Section Content", translate=True)
     dynamic_content = fields.Html(
-        compute="_compute_dynamic_content", help="compute dynamic Content"
+        compute="_compute_dynamic_content",
+        help="compute dynamic Content",
+        translate=True,
     )
     active = fields.Boolean(
         default=True,
@@ -48,12 +52,13 @@ class AgreementSection(models.Model):
           model (sub-model).""",
     )
     default_value = fields.Char(
-        help="Optional value to use if the target field is empty."
+        help="Optional value to use if the target field is empty.", translate=True
     )
     copyvalue = fields.Char(
         string="Placeholder Expression",
         help="""Final placeholder expression, to be copy-pasted in the desired
          template field.""",
+        translate=True,
     )
 
     @api.onchange("field_id", "sub_model_object_field_id", "default_value")
