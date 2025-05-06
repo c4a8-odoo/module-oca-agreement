@@ -19,9 +19,11 @@ msgstr ""
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.view_project_agreement_kanban
 msgid "<span class=\"fa fa-ellipsis-v\" aria-hidden=\"true\" title=\"Icon\"/>"
-msgstr "<span class=\"fa fa-ellipsis-v\" aria-hidden=\"true\" title=\"Icona\"/>"
+msgstr ""
+"<span class=\"fa fa-ellipsis-v\" aria-hidden=\"true\" title=\"Icona\"/>"
 
 #. module: agreement_legal
+#: model:agreement.stage,name:agreement_legal.agreement_stage_active
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__active
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_appendix__active
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_clause__active
@@ -44,6 +46,7 @@ msgid "Advanced Features"
 msgstr "Funzioni avanzate"
 
 #. module: agreement_legal
+#: model:agreement.type,name:agreement_legal.agreement_type_agreement
 #: model:ir.actions.report,name:agreement_legal.partner_agreement_contract_document
 #: model:ir.model,name:agreement_legal.model_agreement
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_appendix__agreement_id
@@ -198,7 +201,8 @@ msgstr "Contratti da revisionare"
 msgid ""
 "Any terms that you have agreed to and want to track on the agreement/"
 "contract."
-msgstr "Qualsiasi temine contrattuale accettato di cui si vuole tenere traccia."
+msgstr ""
+"Qualsiasi temine contrattuale accettato di cui si vuole tenere traccia."
 
 #. module: agreement_legal
 #: model:ir.actions.act_window,name:agreement_legal.agreement_appendix_action
@@ -256,6 +260,11 @@ msgstr "Da:"
 #: model_terms:ir.ui.view,arch_db:agreement_legal.create_agreement_from_template_form_view
 msgid "Cancel"
 msgstr "Annulla"
+
+#. module: agreement_legal
+#: model:agreement.stage,name:agreement_legal.agreement_stage_cancelled
+msgid "Cancelled"
+msgstr ""
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__change_notice
@@ -361,6 +370,11 @@ msgstr "Contenuto"
 #: model:ir.ui.menu,name:agreement_legal.agreement_data_contents
 msgid "Contents"
 msgstr "Contenuti"
+
+#. module: agreement_legal
+#: model:agreement.type,name:agreement_legal.agreement_type_contract
+msgid "Contract"
+msgstr ""
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.agreement_appendix_form
@@ -510,6 +524,7 @@ msgid "Display Name"
 msgstr "Nome visualizzato"
 
 #. module: agreement_legal
+#: model:agreement.stage,name:agreement_legal.agreement_stage_draft
 #: model:ir.model.fields.selection,name:agreement_legal.selection__agreement__state__draft
 msgid "Draft"
 msgstr "Bozza"
@@ -565,6 +580,11 @@ msgstr "Inserire il valore predefinito se il campo è vuoto"
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__expiration_notice
 msgid "Exp. Notice (Days)"
 msgstr "Avviso scad. (giorni)"
+
+#. module: agreement_legal
+#: model:agreement.stage,name:agreement_legal.agreement_stage_expired
+msgid "Expired"
+msgstr ""
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__field_id
@@ -686,6 +706,11 @@ msgstr "Ultimo aggiornamento di"
 #: model:ir.model.fields,field_description:agreement_legal.field_create_agreement_wizard__write_date
 msgid "Last Updated on"
 msgstr "Ultimo aggiornamento il"
+
+#. module: agreement_legal
+#: model:agreement.type,name:agreement_legal.agreement_type_loi
+msgid "Letter of Intent"
+msgstr ""
 
 #. module: agreement_legal
 #: model:ir.model.fields,help:agreement_legal.field_agreement__parent_agreement_id
@@ -822,8 +847,14 @@ msgid "Name:"
 msgstr "Nome:"
 
 #. module: agreement_legal
+#: model:agreement.stage,name:agreement_legal.agreement_stage_negotiation
+msgid "Negotiation"
+msgstr ""
+
+#. module: agreement_legal
 #. odoo-python
 #: code:addons/agreement_legal/models/agreement.py:0
+#: model:agreement.stage,name:agreement_legal.agreement_stage_new
 #, python-format
 msgid "New"
 msgstr "Nuovo"
@@ -872,6 +903,11 @@ msgstr "Operazioni"
 #: model:ir.model.fields,help:agreement_legal.field_agreement_section__default_value
 msgid "Optional value to use if the target field is empty."
 msgstr "Valore opzionale da utilizzare se il campo destinazione è vuoto."
+
+#. module: agreement_legal
+#: model:agreement.stage,name:agreement_legal.agreement_stage_out
+msgid "Out for Customer Signature"
+msgstr ""
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__parent_agreement_id
@@ -1067,6 +1103,11 @@ msgstr "Giorni revisione"
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_type__review_user_id
 msgid "Review User"
 msgstr "Utente revisione"
+
+#. module: agreement_legal
+#: model:agreement.stage,name:agreement_legal.agreement_stage_reviewed
+msgid "Reviewed"
+msgstr ""
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__reviewed_user_id
@@ -1343,6 +1384,11 @@ msgid "Term Dates"
 msgstr "Date di scadenza"
 
 #. module: agreement_legal
+#: model:agreement.stage,name:agreement_legal.agreement_stage_terminated
+msgid "Terminated"
+msgstr ""
+
+#. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__termination_date
 msgid "Termination Date"
 msgstr "Data termine"
@@ -1535,6 +1581,11 @@ msgstr "Versione"
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_form_view
 msgid "Version:"
 msgstr "Versione:"
+
+#. module: agreement_legal
+#: model:agreement.stage,name:agreement_legal.agreement_stage_internal
+msgid "Waiting Internal Signature"
+msgstr ""
 
 #. module: agreement_legal
 #: model:ir.model.fields,help:agreement_legal.field_agreement__sub_model_object_field_id

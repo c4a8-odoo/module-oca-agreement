@@ -22,6 +22,7 @@ msgid "<span class=\"fa fa-ellipsis-v\" aria-hidden=\"true\" title=\"Icon\"/>"
 msgstr "<span class=\"fa fa-ellipsis-v\" aria-hidden=\"true\" title=\"Icon\"/>"
 
 #. module: agreement_legal
+#: model:agreement.stage,name:agreement_legal.agreement_stage_active
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__active
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_appendix__active
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_clause__active
@@ -44,6 +45,7 @@ msgid "Advanced Features"
 msgstr "Características avanzadas"
 
 #. module: agreement_legal
+#: model:agreement.type,name:agreement_legal.agreement_type_agreement
 #: model:ir.actions.report,name:agreement_legal.partner_agreement_contract_document
 #: model:ir.model,name:agreement_legal.model_agreement
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_appendix__agreement_id
@@ -260,6 +262,11 @@ msgid "Cancel"
 msgstr "cancelar"
 
 #. module: agreement_legal
+#: model:agreement.stage,name:agreement_legal.agreement_stage_cancelled
+msgid "Cancelled"
+msgstr ""
+
+#. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__change_notice
 msgid "Change Notice (Days)"
 msgstr "Aviso de cambio (días)"
@@ -363,6 +370,11 @@ msgstr "Contenido"
 #: model:ir.ui.menu,name:agreement_legal.agreement_data_contents
 msgid "Contents"
 msgstr "Contenido"
+
+#. module: agreement_legal
+#: model:agreement.type,name:agreement_legal.agreement_type_contract
+msgid "Contract"
+msgstr ""
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.agreement_appendix_form
@@ -512,6 +524,7 @@ msgid "Display Name"
 msgstr "Nombre para mostrar"
 
 #. module: agreement_legal
+#: model:agreement.stage,name:agreement_legal.agreement_stage_draft
 #: model:ir.model.fields.selection,name:agreement_legal.selection__agreement__state__draft
 msgid "Draft"
 msgstr "Borrador"
@@ -567,6 +580,11 @@ msgstr "Ingrese el valor predeterminado si el campo está vacío"
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__expiration_notice
 msgid "Exp. Notice (Days)"
 msgstr "Exp. Aviso (días)"
+
+#. module: agreement_legal
+#: model:agreement.stage,name:agreement_legal.agreement_stage_expired
+msgid "Expired"
+msgstr ""
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__field_id
@@ -685,6 +703,11 @@ msgstr "Última actualización por"
 #: model:ir.model.fields,field_description:agreement_legal.field_create_agreement_wizard__write_date
 msgid "Last Updated on"
 msgstr "Ultima actualización en"
+
+#. module: agreement_legal
+#: model:agreement.type,name:agreement_legal.agreement_type_loi
+msgid "Letter of Intent"
+msgstr ""
 
 #. module: agreement_legal
 #: model:ir.model.fields,help:agreement_legal.field_agreement__parent_agreement_id
@@ -821,8 +844,14 @@ msgid "Name:"
 msgstr "Nombre:"
 
 #. module: agreement_legal
+#: model:agreement.stage,name:agreement_legal.agreement_stage_negotiation
+msgid "Negotiation"
+msgstr ""
+
+#. module: agreement_legal
 #. odoo-python
 #: code:addons/agreement_legal/models/agreement.py:0
+#: model:agreement.stage,name:agreement_legal.agreement_stage_new
 #, python-format
 msgid "New"
 msgstr "Nuevo"
@@ -871,6 +900,11 @@ msgstr "Operaciones"
 #: model:ir.model.fields,help:agreement_legal.field_agreement_section__default_value
 msgid "Optional value to use if the target field is empty."
 msgstr "Valor opcional para usar si el campo de destino está vacío."
+
+#. module: agreement_legal
+#: model:agreement.stage,name:agreement_legal.agreement_stage_out
+msgid "Out for Customer Signature"
+msgstr ""
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__parent_agreement_id
@@ -1066,6 +1100,11 @@ msgstr "Días de revisión"
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_type__review_user_id
 msgid "Review User"
 msgstr "Revisar usuario"
+
+#. module: agreement_legal
+#: model:agreement.stage,name:agreement_legal.agreement_stage_reviewed
+msgid "Reviewed"
+msgstr ""
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__reviewed_user_id
@@ -1342,6 +1381,11 @@ msgid "Term Dates"
 msgstr "Fechas de Términos"
 
 #. module: agreement_legal
+#: model:agreement.stage,name:agreement_legal.agreement_stage_terminated
+msgid "Terminated"
+msgstr ""
+
+#. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__termination_date
 msgid "Termination Date"
 msgstr "Fecha de Finalización"
@@ -1537,6 +1581,11 @@ msgstr "Versión"
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_form_view
 msgid "Version:"
 msgstr "Versión:"
+
+#. module: agreement_legal
+#: model:agreement.stage,name:agreement_legal.agreement_stage_internal
+msgid "Waiting Internal Signature"
+msgstr ""
 
 #. module: agreement_legal
 #: model:ir.model.fields,help:agreement_legal.field_agreement__sub_model_object_field_id

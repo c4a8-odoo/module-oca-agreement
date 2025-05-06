@@ -22,6 +22,7 @@ msgid "<span class=\"fa fa-ellipsis-v\" aria-hidden=\"true\" title=\"Icon\"/>"
 msgstr ""
 
 #. module: agreement_legal
+#: model:agreement.stage,name:agreement_legal.agreement_stage_active
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__active
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_appendix__active
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_clause__active
@@ -44,6 +45,7 @@ msgid "Advanced Features"
 msgstr "高级功能"
 
 #. module: agreement_legal
+#: model:agreement.type,name:agreement_legal.agreement_type_agreement
 #: model:ir.actions.report,name:agreement_legal.partner_agreement_contract_document
 #: model:ir.model,name:agreement_legal.model_agreement
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_appendix__agreement_id
@@ -147,7 +149,6 @@ msgstr ""
 
 #. module: agreement_legal
 #: model:ir.actions.server,name:agreement_legal.ir_cron_test_acc_move_except_ir_actions_server
-#: model:ir.cron,cron_name:agreement_legal.ir_cron_test_acc_move_except
 msgid "Agreement: Check to Review Days"
 msgstr ""
 
@@ -259,6 +260,11 @@ msgid "Cancel"
 msgstr ""
 
 #. module: agreement_legal
+#: model:agreement.stage,name:agreement_legal.agreement_stage_cancelled
+msgid "Cancelled"
+msgstr ""
+
+#. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__change_notice
 msgid "Change Notice (Days)"
 msgstr "变更通知(天数)"
@@ -365,6 +371,11 @@ msgid "Contents"
 msgstr "内容"
 
 #. module: agreement_legal
+#: model:agreement.type,name:agreement_legal.agreement_type_contract
+msgid "Contract"
+msgstr ""
+
+#. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.agreement_appendix_form
 #: model_terms:ir.ui.view,arch_db:agreement_legal.agreement_recital_form
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_clause_form_view
@@ -391,7 +402,7 @@ msgstr ""
 
 #. module: agreement_legal
 #. odoo-javascript
-#: code:addons/agreement_legal/static/src/xml/agreement.xml:0
+#: code:addons/agreement_legal/static/src/xml/agreement_template.xml:0
 #: model:ir.actions.act_window,name:agreement_legal.create_agreement_from_template_action
 #, python-format
 msgid "Create From Template"
@@ -509,6 +520,7 @@ msgid "Display Name"
 msgstr "显示名称"
 
 #. module: agreement_legal
+#: model:agreement.stage,name:agreement_legal.agreement_stage_draft
 #: model:ir.model.fields.selection,name:agreement_legal.selection__agreement__state__draft
 msgid "Draft"
 msgstr "草稿"
@@ -564,6 +576,11 @@ msgstr "如果字段为空，则输入默认值"
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__expiration_notice
 msgid "Exp. Notice (Days)"
 msgstr "到期通知（天数）"
+
+#. module: agreement_legal
+#: model:agreement.stage,name:agreement_legal.agreement_stage_expired
+msgid "Expired"
+msgstr ""
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__field_id
@@ -660,18 +677,6 @@ msgid "Is Folded"
 msgstr "是折叠"
 
 #. module: agreement_legal
-#: model:ir.model.fields,field_description:agreement_legal.field_agreement_appendix____last_update
-#: model:ir.model.fields,field_description:agreement_legal.field_agreement_clause____last_update
-#: model:ir.model.fields,field_description:agreement_legal.field_agreement_line____last_update
-#: model:ir.model.fields,field_description:agreement_legal.field_agreement_recital____last_update
-#: model:ir.model.fields,field_description:agreement_legal.field_agreement_section____last_update
-#: model:ir.model.fields,field_description:agreement_legal.field_agreement_stage____last_update
-#: model:ir.model.fields,field_description:agreement_legal.field_agreement_subtype____last_update
-#: model:ir.model.fields,field_description:agreement_legal.field_create_agreement_wizard____last_update
-msgid "Last Modified on"
-msgstr "最后修改时间"
-
-#. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_appendix__write_uid
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_clause__write_uid
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_line__write_uid
@@ -694,6 +699,11 @@ msgstr "最后更新者"
 #: model:ir.model.fields,field_description:agreement_legal.field_create_agreement_wizard__write_date
 msgid "Last Updated on"
 msgstr "最后更新时间"
+
+#. module: agreement_legal
+#: model:agreement.type,name:agreement_legal.agreement_type_loi
+msgid "Letter of Intent"
+msgstr ""
 
 #. module: agreement_legal
 #: model:ir.model.fields,help:agreement_legal.field_agreement__parent_agreement_id
@@ -829,8 +839,14 @@ msgid "Name:"
 msgstr "名称："
 
 #. module: agreement_legal
+#: model:agreement.stage,name:agreement_legal.agreement_stage_negotiation
+msgid "Negotiation"
+msgstr ""
+
+#. module: agreement_legal
 #. odoo-python
 #: code:addons/agreement_legal/models/agreement.py:0
+#: model:agreement.stage,name:agreement_legal.agreement_stage_new
 #, python-format
 msgid "New"
 msgstr "新建"
@@ -879,6 +895,11 @@ msgstr "操作"
 #: model:ir.model.fields,help:agreement_legal.field_agreement_section__default_value
 msgid "Optional value to use if the target field is empty."
 msgstr "如果目标字段为空，则使用可选值。"
+
+#. module: agreement_legal
+#: model:agreement.stage,name:agreement_legal.agreement_stage_out
+msgid "Out for Customer Signature"
+msgstr ""
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__parent_agreement_id
@@ -1076,6 +1097,11 @@ msgid "Review User"
 msgstr ""
 
 #. module: agreement_legal
+#: model:agreement.stage,name:agreement_legal.agreement_stage_reviewed
+msgid "Reviewed"
+msgstr ""
+
+#. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__reviewed_user_id
 msgid "Reviewed By"
 msgstr "审查者"
@@ -1130,7 +1156,6 @@ msgid "Sections"
 msgstr "章节"
 
 #. module: agreement_legal
-#: model:ir.model.fields,help:agreement_legal.field_agreement__field_id
 #: model:ir.model.fields,help:agreement_legal.field_agreement_appendix__field_id
 #: model:ir.model.fields,help:agreement_legal.field_agreement_clause__field_id
 #: model:ir.model.fields,help:agreement_legal.field_agreement_recital__field_id
@@ -1345,6 +1370,11 @@ msgid "Term Dates"
 msgstr "期限日期"
 
 #. module: agreement_legal
+#: model:agreement.stage,name:agreement_legal.agreement_stage_terminated
+msgid "Terminated"
+msgstr ""
+
+#. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__termination_date
 msgid "Termination Date"
 msgstr "终止日期"
@@ -1526,6 +1556,11 @@ msgid "Version:"
 msgstr "版本："
 
 #. module: agreement_legal
+#: model:agreement.stage,name:agreement_legal.agreement_stage_internal
+msgid "Waiting Internal Signature"
+msgstr ""
+
+#. module: agreement_legal
 #: model:ir.model.fields,help:agreement_legal.field_agreement__sub_model_object_field_id
 #: model:ir.model.fields,help:agreement_legal.field_agreement_appendix__sub_model_object_field_id
 #: model:ir.model.fields,help:agreement_legal.field_agreement_clause__sub_model_object_field_id
@@ -1558,6 +1593,15 @@ msgstr "协议结束时。"
 #: model:ir.model.fields,help:agreement_legal.field_agreement__start_date
 msgid "When the agreement starts."
 msgstr "协议开始时。"
+
+#. module: agreement_legal
+#: model:ir.model.fields,help:agreement_legal.field_agreement__field_id
+msgid ""
+"You can select a target field from the related document model.\n"
+"        If it is a relationship field you will be able to select a target "
+"field\n"
+"        at the destination of the relationship."
+msgstr ""
 
 #. module: agreement_legal
 #. odoo-python
@@ -1603,6 +1647,9 @@ msgstr "|  创建者:"
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_form_view
 msgid "|  Created On:"
 msgstr "|  创建于："
+
+#~ msgid "Last Modified on"
+#~ msgstr "最后修改时间"
 
 #~ msgid ""
 #~ "The address to send notificaitons to, if different from customer address."
