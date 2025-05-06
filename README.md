@@ -21,9 +21,9 @@ Available addons
 ----------------
 addon | version | maintainers | summary
 --- | --- | --- | ---
-[agreement](agreement/) | 17.0.1.0.0 | [![ygol](https://github.com/ygol.png?size=30px)](https://github.com/ygol) [![alexis-via](https://github.com/alexis-via.png?size=30px)](https://github.com/alexis-via) | Adds an agreement object
+[agreement](agreement/) | 17.0.1.1.0 | [![ygol](https://github.com/ygol.png?size=30px)](https://github.com/ygol) [![alexis-via](https://github.com/alexis-via.png?size=30px)](https://github.com/alexis-via) | Adds an agreement object
 [agreement_account](agreement_account/) | 17.0.1.0.0 | [![alexis-via](https://github.com/alexis-via.png?size=30px)](https://github.com/alexis-via) [![bealdav](https://github.com/bealdav.png?size=30px)](https://github.com/bealdav) | Agreement on invoices
-[agreement_legal](agreement_legal/) | 17.0.2.0.0 | [![max3903](https://github.com/max3903.png?size=30px)](https://github.com/max3903) [![ygol](https://github.com/ygol.png?size=30px)](https://github.com/ygol) | Manage Agreements, LOI and Contracts
+[agreement_legal](agreement_legal/) | 17.0.2.1.0 | [![max3903](https://github.com/max3903.png?size=30px)](https://github.com/max3903) [![ygol](https://github.com/ygol.png?size=30px)](https://github.com/ygol) | Manage Agreements, LOI and Contracts
 [agreement_repair](agreement_repair/) | 17.0.1.0.0 | [![smangukiya](https://github.com/smangukiya.png?size=30px)](https://github.com/smangukiya) [![max3903](https://github.com/max3903.png?size=30px)](https://github.com/max3903) | Link repair orders to an agreement
 [agreement_sale](agreement_sale/) | 17.0.1.0.0 | [![alexis-via](https://github.com/alexis-via.png?size=30px)](https://github.com/alexis-via) [![bealdav](https://github.com/bealdav.png?size=30px)](https://github.com/bealdav) | Agreement on sales
 
