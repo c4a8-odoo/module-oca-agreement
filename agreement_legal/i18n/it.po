@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2025-02-05 12:06+0000\n"
+"PO-Revision-Date: 2025-05-07 14:23+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: none\n"
 "Language: it\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.6.2\n"
+"X-Generator: Weblate 5.10.4\n"
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.view_project_agreement_kanban
@@ -264,7 +264,7 @@ msgstr "Annulla"
 #. module: agreement_legal
 #: model:agreement.stage,name:agreement_legal.agreement_stage_cancelled
 msgid "Cancelled"
-msgstr ""
+msgstr "Annullato"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__change_notice
@@ -374,7 +374,7 @@ msgstr "Contenuti"
 #. module: agreement_legal
 #: model:agreement.type,name:agreement_legal.agreement_type_contract
 msgid "Contract"
-msgstr ""
+msgstr "Contratto"
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.agreement_appendix_form
@@ -584,7 +584,7 @@ msgstr "Avviso scad. (giorni)"
 #. module: agreement_legal
 #: model:agreement.stage,name:agreement_legal.agreement_stage_expired
 msgid "Expired"
-msgstr ""
+msgstr "Scaduto"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__field_id
@@ -710,7 +710,7 @@ msgstr "Ultimo aggiornamento il"
 #. module: agreement_legal
 #: model:agreement.type,name:agreement_legal.agreement_type_loi
 msgid "Letter of Intent"
-msgstr ""
+msgstr "Lettera di intento"
 
 #. module: agreement_legal
 #: model:ir.model.fields,help:agreement_legal.field_agreement__parent_agreement_id
@@ -849,7 +849,7 @@ msgstr "Nome:"
 #. module: agreement_legal
 #: model:agreement.stage,name:agreement_legal.agreement_stage_negotiation
 msgid "Negotiation"
-msgstr ""
+msgstr "Trattativa"
 
 #. module: agreement_legal
 #. odoo-python
@@ -907,7 +907,7 @@ msgstr "Valore opzionale da utilizzare se il campo destinazione è vuoto."
 #. module: agreement_legal
 #: model:agreement.stage,name:agreement_legal.agreement_stage_out
 msgid "Out for Customer Signature"
-msgstr ""
+msgstr "Fuori per firma cliente"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__parent_agreement_id
@@ -1107,7 +1107,7 @@ msgstr "Utente revisione"
 #. module: agreement_legal
 #: model:agreement.stage,name:agreement_legal.agreement_stage_reviewed
 msgid "Reviewed"
-msgstr ""
+msgstr "Revisionato"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__reviewed_user_id
@@ -1386,7 +1386,7 @@ msgstr "Date di scadenza"
 #. module: agreement_legal
 #: model:agreement.stage,name:agreement_legal.agreement_stage_terminated
 msgid "Terminated"
-msgstr ""
+msgstr "Terminato"
 
 #. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__termination_date
@@ -1585,7 +1585,7 @@ msgstr "Versione:"
 #. module: agreement_legal
 #: model:agreement.stage,name:agreement_legal.agreement_stage_internal
 msgid "Waiting Internal Signature"
-msgstr ""
+msgstr "In attesa di firma interna"
 
 #. module: agreement_legal
 #: model:ir.model.fields,help:agreement_legal.field_agreement__sub_model_object_field_id
