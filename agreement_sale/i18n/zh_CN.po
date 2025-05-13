@@ -34,6 +34,11 @@ msgid "Agreement Type"
 msgstr "协议"
 
 #. module: agreement_sale
+#: model:ir.ui.menu,name:agreement_sale.agreement_type_menu
+msgid "Agreement Types"
+msgstr ""
+
+#. module: agreement_sale
 #: model_terms:ir.ui.view,arch_db:agreement_sale.res_config_settings_view_form
 #, fuzzy
 msgid "Agreement types"

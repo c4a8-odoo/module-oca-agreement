@@ -33,6 +33,11 @@ msgid "Agreement Type"
 msgstr "Tipo contratto"
 
 #. module: agreement_sale
+#: model:ir.ui.menu,name:agreement_sale.agreement_type_menu
+msgid "Agreement Types"
+msgstr ""
+
+#. module: agreement_sale
 #: model_terms:ir.ui.view,arch_db:agreement_sale.res_config_settings_view_form
 msgid "Agreement types"
 msgstr "Tipi contratto"
