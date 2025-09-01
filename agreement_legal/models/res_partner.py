@@ -22,8 +22,9 @@ class Partner(models.Model):
 
     def action_open_agreement(self):
         self.ensure_one()
-        action = self.env.ref("agreement.agreement_action")
-        result = action.read()[0]
-        result["domain"] = [("partner_id", "=", self.id)]
-        result["context"] = {"default_partner_id": self.id}
-        return result
+        action = self.env["ir.actions.act_window"]._for_xml_id(
+            "agreement.agreement_action"
+        )
+        action["domain"] = [("partner_id", "=", self.id)]
+        action["context"] = {"default_partner_id": self.id}
+        return action
