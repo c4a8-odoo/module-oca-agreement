@@ -225,7 +225,7 @@ class Agreement(models.Model):
         "customer address.(Address Type = Other)",
     )
     signed_contract_filename = fields.Char(string="Filename")
-    signed_contract = fields.Binary(string="Signed Document", tracking=True)
+    signed_contract = fields.Binary(string="Signed Document")
     field_id = fields.Many2one(
         "ir.model.fields",
         string="Field",
