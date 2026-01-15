@@ -9,7 +9,6 @@
                 <block title="Agreements" name="agreement_settings">
                     <setting id="sales_settings_agreement_type_group">
                         <field name="group_use_agreement_type" />
-                        <label for="group_use_agreement_type" />
                         <div class="text-muted">
                             Manage agreements by types
                         </div>
@@ -31,7 +30,6 @@
                     <setting id="sales_settings_agreement_template_group">
                         <setting>
                             <field name="group_use_agreement_template" />
-                            <label for="group_use_agreement_template" />
                             <div class="text-muted">
                                 Have a special kind of agreements which act as templates
                             </div>
