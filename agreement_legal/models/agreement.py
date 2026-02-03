@@ -143,7 +143,10 @@ class Agreement(models.Model):
         """
         return deftext
 
-    parties = fields.Html(default=_get_default_parties, help="Parties of the agreement")
+    parties = fields.Html(
+        default=lambda self: self._get_default_parties(),
+        help="Parties of the agreement",
+    )
     dynamic_parties = fields.Html(
         compute="_compute_dynamic_parties", help="Compute dynamic parties"
     )
@@ -165,8 +168,7 @@ class Agreement(models.Model):
         "res.users",
         string="Signed By",
         tracking=True,
-        help="The user at our company who authorized/signed the agreement or "
-        "contract.",
+        help="The user at our company who authorized/signed the agreement or contract.",
     )
     partner_signed_user_id = fields.Many2one(
         "res.partner",
@@ -318,6 +320,20 @@ class Agreement(models.Model):
             agreement.message_post(
                 body=_("Agreement recomputed from template %s") % template.display_name
             )
+
+    def action_open_recompute_from_template_wizard(self):
+        self.ensure_one()
+        return {
+            "name": _("Recompute From Template"),
+            "res_model": "recompute.agreement.from.template.wizard",
+            "type": "ir.actions.act_window",
+            "view_mode": "form",
+            "target": "new",
+            "context": {
+                "default_agreement_id": self.id,
+                "default_template_id": self.template_id.id,
+            },
+        }
 
     # compute the dynamic content for jinja expression
     def _compute_dynamic_description(self):

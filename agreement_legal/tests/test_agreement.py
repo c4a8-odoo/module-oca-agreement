@@ -244,3 +244,23 @@ class TestAgreement(TransactionCase):
             new_child.id,
             child_template.id,
         )
+
+    def test_action_open_recompute_from_template_wizard(self):
+        template = self.env["agreement"].create(
+            {
+                "name": "Template Agreement",
+                "is_template": True,
+            }
+        )
+        self.test_agreement.template_id = template
+
+        action = self.test_agreement.action_open_recompute_from_template_wizard()
+
+        self.assertEqual(
+            action["res_model"], "recompute.agreement.from.template.wizard"
+        )
+        self.assertEqual(action["target"], "new")
+        self.assertEqual(
+            action["context"]["default_agreement_id"],
+            self.test_agreement.id,
+        )
