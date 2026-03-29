@@ -136,9 +136,9 @@ class AgreementSettlementCreateWiz(models.TransientModel):
         if line:
             domain += safe_eval(line.rebate_domain)
         elif agreement.rebate_line_ids:
-            line_domains = Domain()
-            for x in agreement.rebate_line_ids:
-                line_domains |= Domain(safe_eval(x.rebate_domain))
+            line_domains = Domain.OR(
+                [Domain(safe_eval(x.rebate_domain)) for x in agreement.rebate_line_ids]
+            )
             domain = Domain(domain) & line_domains
         return domain
 
