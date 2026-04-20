@@ -16,6 +16,7 @@
     "data": [
         "data/cron.xml",
         "data/ir_sequence.xml",
+        "data/ir_actions.xml",
         "data/agreement_stage.xml",
         "data/agreement_type.xml",
         "security/res_groups.xml",
