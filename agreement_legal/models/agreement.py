@@ -318,7 +318,10 @@ class Agreement(models.Model):
                 }
             )
             agreement.message_post(
-                body=_("Agreement recomputed from template %s") % template.display_name
+                body=self.env._(
+                    "Agreement recomputed from template %s",
+                    template.display_name,
+                )
             )
 
     def action_open_recompute_from_template_wizard(self):
@@ -447,8 +450,10 @@ class Agreement(models.Model):
         return self.action_view_agreement(res)
 
     def _fill_create_vals(self, vals):
-        if vals.get("code", _("New")) == _("New"):
-            vals["code"] = self.env["ir.sequence"].next_by_code("agreement") or _("New")
+        if vals.get("code", self.env._("New")) == self.env._("New"):
+            vals["code"] = self.env["ir.sequence"].next_by_code(
+                "agreement"
+            ) or self.env._("New")
         if not vals.get("stage_id"):
             vals["stage_id"] = self._get_default_stage_id()
         return vals
