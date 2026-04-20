@@ -143,7 +143,10 @@ class Agreement(models.Model):
         """
         return deftext
 
-    parties = fields.Html(default=_get_default_parties, help="Parties of the agreement")
+    parties = fields.Html(
+        default=lambda self: self._get_default_parties(),
+        help="Parties of the agreement",
+    )
     dynamic_parties = fields.Html(
         compute="_compute_dynamic_parties", help="Compute dynamic parties"
     )
@@ -165,8 +168,7 @@ class Agreement(models.Model):
         "res.users",
         string="Signed By",
         tracking=True,
-        help="The user at our company who authorized/signed the agreement or "
-        "contract.",
+        help="The user at our company who authorized/signed the agreement or contract.",
     )
     partner_signed_user_id = fields.Many2one(
         "res.partner",
@@ -316,7 +318,10 @@ class Agreement(models.Model):
                 }
             )
             agreement.message_post(
-                body=_("Agreement recomputed from template %s") % template.display_name
+                body=self.env._(
+                    "Agreement recomputed from template %s",
+                    template.display_name,
+                )
             )
 
     # compute the dynamic content for jinja expression
@@ -431,8 +436,10 @@ class Agreement(models.Model):
         return self.action_view_agreement(res)
 
     def _fill_create_vals(self, vals):
-        if vals.get("code", _("New")) == _("New"):
-            vals["code"] = self.env["ir.sequence"].next_by_code("agreement") or _("New")
+        if vals.get("code", self.env._("New")) == self.env._("New"):
+            vals["code"] = self.env["ir.sequence"].next_by_code(
+                "agreement"
+            ) or self.env._("New")
         if not vals.get("stage_id"):
             vals["stage_id"] = self._get_default_stage_id()
         return vals
