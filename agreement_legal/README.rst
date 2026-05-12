@@ -1,7 +1,3 @@
-.. image:: https://odoo-community.org/readme-banner-image
-   :target: https://odoo-community.org/get-involved?utm_source=readme
-   :alt: Odoo Community Association
-
 ================
 Agreements Legal
 ================
@@ -17,7 +13,7 @@ Agreements Legal
 .. |badge1| image:: https://img.shields.io/badge/maturity-Beta-yellow.png
     :target: https://odoo-community.org/page/development-status
     :alt: Beta
-.. |badge2| image:: https://img.shields.io/badge/license-AGPL--3-blue.png
+.. |badge2| image:: https://img.shields.io/badge/licence-AGPL--3-blue.png
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-OCA%2Fagreement-lightgray.png?logo=github
@@ -100,18 +96,18 @@ Authors
 Contributors
 ------------
 
--  Patrick Wilson <pwilson@pavlovmedia.com>
--  Bhavesh Odedra <bodedra@opensourceintegrators.com>
--  Wolfgang Hall <whall@opensourceintegrators.com>
--  Maxime Chambreuil <mchambreuil@opensourceintegrators.com>
--  Sandip Mangukiya <smangukiya@opensourceintegrators.com>
--  Yves Goldberg <yves@ygol.com>
--  Tharathip Chaweewongphan <tharathipc@ecosoft.co.th>
--  Italo LOPES <italo.lopes@camptocamp.com>
--  `APSL-Nagarro <https://www.apsl.tech>`__:
+- Patrick Wilson <pwilson@pavlovmedia.com>
+- Bhavesh Odedra <bodedra@opensourceintegrators.com>
+- Wolfgang Hall <whall@opensourceintegrators.com>
+- Maxime Chambreuil <mchambreuil@opensourceintegrators.com>
+- Sandip Mangukiya <smangukiya@opensourceintegrators.com>
+- Yves Goldberg <yves@ygol.com>
+- Tharathip Chaweewongphan <tharathipc@ecosoft.co.th>
+- Italo LOPES <italo.lopes@camptocamp.com>
+- `APSL-Nagarro <https://www.apsl.tech>`__:
 
-   -  Antoni Marroig <amarroig@apsl.net>
-   -  Miquel Alzanillas <miquel.alzanillas@nagarro.com>
+  - Antoni Marroig <amarroig@apsl.net>
+  - Miquel Alzanillas <miquel.alzanillas@nagarro.com>
 
 Other credits
 -------------
