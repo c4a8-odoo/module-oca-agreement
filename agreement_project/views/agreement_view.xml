@@ -13,10 +13,10 @@
         </field>
     </record>
 
-    <record id="partner_agreement_form_view_task" model="ir.ui.view">
+    <record id="agreement_form" model="ir.ui.view">
         <field name="name">agreement.form.task</field>
         <field name="model">agreement</field>
-        <field name="inherit_id" ref="agreement_legal.partner_agreement_form_view" />
+        <field name="inherit_id" ref="agreement.agreement_form" />
         <field name="arch" type="xml">
             <xpath expr="//div[@name='button_box']" position="inside">
                 <button
@@ -33,7 +33,7 @@
                     </div>
                 </button>
             </xpath>
-            <xpath expr="//field[@name='template_id']" position="after">
+            <xpath expr="//field[@name='is_template']" position="after">
                 <field name="project_ids" widget="many2many_tags" readonly="True" />
             </xpath>
         </field>

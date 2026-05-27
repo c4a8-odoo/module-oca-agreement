@@ -5,14 +5,26 @@ class TestAgreement(TransactionCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
-        cls.task_id = cls.env.ref("project.project_1_task_1")
-        cls.agreement_id = cls.env.ref("agreement.market1")
-        cls.agreement_id2 = cls.env.ref("agreement.market2")
-        cls.project_id = cls.env.ref("project.project_project_3")
+        cls.env = cls.env(context=dict(cls.env.context, tracking_disable=True))
+        cls.agreement = cls.env["agreement"].create(
+            {"code": "AGR-001", "name": "Agreement 1"}
+        )
+        cls.agreement2 = cls.env["agreement"].create(
+            {"code": "AGR-002", "name": "Agreement 2"}
+        )
+        cls.project = cls.env["project.project"].create(
+            {"name": "Test Project", "agreement_id": cls.agreement2.id}
+        )
+        cls.task = cls.env["project.task"].create(
+            {"name": "Test Task", "project_id": cls.project.id}
+        )
 
-    def test_agreement(self):
-        self.task_id.agreement_id = self.agreement_id
-        self.agreement_id._compute_task_count()
-        self.assertEqual(self.agreement_id.task_count, 1)
-        self.project_id.agreement_id = self.agreement_id2
-        self.assertIn(self.project_id, self.agreement_id2.project_ids)
+    def test_task_inherits_agreement_from_project(self):
+        self.assertEqual(self.task.agreement_id, self.agreement2)
+
+    def test_agreement_task_count(self):
+        self.agreement2._compute_task_count()
+        self.assertEqual(self.agreement2.task_count, 1)
+
+    def test_agreement_project_ids(self):
+        self.assertIn(self.project, self.agreement2.project_ids)
