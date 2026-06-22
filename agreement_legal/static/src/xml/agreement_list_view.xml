@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates>
+    <!-- Rendered in the control panel's "layout-buttons" slot via the
+         buttonTemplate override on the AgreementListView. Scoped to the
+         agreement_template_tree views only. -->
+    <t t-name="agreement_legal.ListView">
+        <t t-call="agreement_legal.TemplateButton" />
+    </t>
+    <!-- In Odoo 19 the "New" button moved out of web.ListView.Buttons (now
+         empty) into web.ListView as o_list_button_add. Hide it for agreement
+         records unless we are creating templates; leave every other model
+         untouched. -->
+    <t t-inherit="web.ListView" t-inherit-mode="extension">
+        <xpath expr="//button[hasclass('o_list_button_add')]" position="attributes">
+            <attribute
+                name="t-if"
+            >!editedRecord and activeActions.create and props.showButtons and (props.resModel !== 'agreement' or canCreateTemplate)</attribute>
+        </xpath>
+    </t>
+</templates>
