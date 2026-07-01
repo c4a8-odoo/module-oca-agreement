@@ -12,26 +12,6 @@
                     name="agreement_legal"
                     groups="agreement_legal.group_agreement_manager"
                 >
-                    <block title="Operations">
-                        <setting>
-                            <field name="group_uom" />
-                            <label for="group_uom" />
-                            <div class="text-muted">
-                                Sell and purchase products in different units of measure
-                            </div>
-                            <div class="content-group">
-                                <div class="mt16" invisible="group_uom == False">
-                                    <button
-                                        name="%(uom.product_uom_form_action)d"
-                                        icon="fa-arrow-right"
-                                        type="action"
-                                        string="Units Of Measure"
-                                        class="btn-link"
-                                    />
-                                </div>
-                            </div>
-                        </setting>
-                    </block>
                     <block title="Advanced Features">
                         <setting>
                             <field name="module_agreement_sale" />

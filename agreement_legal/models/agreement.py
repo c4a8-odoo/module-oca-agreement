@@ -213,9 +213,6 @@ class Agreement(models.Model):
         copy=False,
         domain=[("active", "=", True)],
     )
-    line_ids = fields.One2many(
-        "agreement.line", "agreement_id", string="Products/Services", copy=False
-    )
     state = fields.Selection(
         [("draft", "Draft"), ("active", "Active"), ("inactive", "Inactive")],
         default="draft",

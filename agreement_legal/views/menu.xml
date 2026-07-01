@@ -81,14 +81,6 @@
         sequence="40"
         action="agreement_appendix_action"
     />
-    <menuitem
-        name="Products"
-        id="agreement_products"
-        sequence="100"
-        parent="agreement_masterdata"
-        action="product.product_template_action"
-    />
-
     <!-- Reporting -->
     <menuitem
         name="Reporting"
