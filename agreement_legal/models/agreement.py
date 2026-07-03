@@ -5,7 +5,7 @@ from datetime import timedelta
 
 from lxml import etree
 
-from odoo import _, api, fields, models
+from odoo import api, fields, models
 
 
 class Agreement(models.Model):
@@ -65,7 +65,7 @@ class Agreement(models.Model):
     code = fields.Char(
         string="Reference",
         required=True,
-        default=lambda self: _("New"),
+        default=lambda self: self.env._("New"),
         tracking=True,
         copy=False,
         help="ID used for internal contract tracking.",
@@ -213,9 +213,6 @@ class Agreement(models.Model):
         copy=False,
         domain=[("active", "=", True)],
     )
-    line_ids = fields.One2many(
-        "agreement.line", "agreement_id", string="Products/Services", copy=False
-    )
     state = fields.Selection(
         [("draft", "Draft"), ("active", "Active"), ("inactive", "Inactive")],
         default="draft",
@@ -266,63 +263,8 @@ class Agreement(models.Model):
                 agreement.activity_schedule(
                     "agreement_legal.mail_activity_review_agreement",
                     user_id=agreement.agreement_type_id.review_user_id.id,
-                    note=_("Your activity is going to end soon"),
+                    note=self.env._("Your activity is going to end soon"),
                 )
-
-    @api.model
-    def recompute_from_template(self):
-        agreements = self.browse(self.env.context.get("active_ids", [])).filtered(
-            lambda a: a.template_id
-        )
-        for agreement in agreements:
-            template = agreement.template_id
-            agreement.recital_ids.unlink()
-            agreement.sections_ids.unlink()
-            agreement.clauses_ids.unlink()
-            agreement.appendix_ids.unlink()
-            agreement.line_ids.unlink()
-            agreement.child_agreements_ids.unlink()
-            for recital in template.recital_ids:
-                recital.copy({"agreement_id": agreement.id})
-
-            section_map = {}
-            for section in template.sections_ids:
-                new_section = section.copy(
-                    {
-                        "agreement_id": agreement.id,
-                        # Copy clauses explicitly below to avoid duplicated clauses.
-                        "clauses_ids": False,
-                    }
-                )
-                section_map[section.id] = new_section.id
-
-            for clause in template.clauses_ids:
-                values = {"agreement_id": agreement.id}
-                if clause.section_id:
-                    values["section_id"] = section_map.get(clause.section_id.id)
-                clause.copy(values)
-
-            for appendix in template.appendix_ids:
-                appendix.copy({"agreement_id": agreement.id})
-
-            for line in template.line_ids:
-                line.copy({"agreement_id": agreement.id})
-
-            for child in template.child_agreements_ids:
-                child.copy({"parent_agreement_id": agreement.id})
-
-            agreement.write(
-                {
-                    "reviewed_user_id": self.env.uid,
-                    "reviewed_date": fields.Date.today(),
-                }
-            )
-            agreement.message_post(
-                body=self.env._(
-                    "Agreement recomputed from template %s",
-                    template.display_name,
-                )
-            )
 
     # compute the dynamic content for jinja expression
     def _compute_dynamic_description(self):
@@ -465,7 +407,7 @@ class Agreement(models.Model):
         """Assign a value for code is New"""
         default = dict(default or {})
         if not default.get("code", False):
-            default.setdefault("code", _("New"))
+            default.setdefault("code", self.env._("New"))
         res = super().copy(default)
         res.sections_ids.mapped("clauses_ids").write({"agreement_id": res.id})
         return res

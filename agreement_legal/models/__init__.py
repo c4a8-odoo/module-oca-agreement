@@ -6,7 +6,6 @@ from . import agreement_dynamic_content_mixin
 from . import agreement
 from . import agreement_appendix
 from . import agreement_clause
-from . import agreement_line
 from . import agreement_recital
 from . import agreement_section
 from . import agreement_type
