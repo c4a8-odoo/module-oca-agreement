@@ -54,7 +54,6 @@ msgstr "Fonctionnalités avancées"
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_section__agreement_id
 #: model:ir.model.fields.selection,name:agreement_legal.selection__agreement_stage__stage_type__agreement
 #: model:ir.module.category,name:agreement_legal.module_agreement_legal_category
-#: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_form_view
 #: model_terms:ir.ui.view,arch_db:agreement_legal.report_agreement_document
 msgid "Agreement"
 msgstr "Accord"
@@ -70,14 +69,14 @@ msgid "Agreement Clauses"
 msgstr "Clause de l'accord"
 
 #. module: agreement_legal
+#: model:ir.model,name:agreement_legal.model_agreement_dynamic_content_mixin
+msgid "Agreement Dynamic Content Mixin"
+msgstr ""
+
+#. module: agreement_legal
 #: model:ir.model,name:agreement_legal.model_agreement_line
 msgid "Agreement Lines"
 msgstr "Lignes de l'accord"
-
-#. module: agreement_legal
-#: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_form_view
-msgid "Agreement Name"
-msgstr "Nom de l'accord"
 
 #. module: agreement_legal
 #: model:ir.actions.report,name:agreement_legal.partner_agreement_contract_document_preview
@@ -468,6 +467,7 @@ msgstr "Date :"
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__default_value
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_appendix__default_value
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_clause__default_value
+#: model:ir.model.fields,field_description:agreement_legal.field_agreement_dynamic_content_mixin__default_value
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_recital__default_value
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_section__default_value
 msgid "Default Value"
@@ -557,6 +557,7 @@ msgstr "Préavis (Jours)"
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__field_id
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_appendix__field_id
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_clause__field_id
+#: model:ir.model.fields,field_description:agreement_legal.field_agreement_dynamic_content_mixin__field_id
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_recital__field_id
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_section__field_id
 msgid "Field"
@@ -576,6 +577,7 @@ msgstr "Nom du fichier"
 #: model:ir.model.fields,help:agreement_legal.field_agreement__copyvalue
 #: model:ir.model.fields,help:agreement_legal.field_agreement_appendix__copyvalue
 #: model:ir.model.fields,help:agreement_legal.field_agreement_clause__copyvalue
+#: model:ir.model.fields,help:agreement_legal.field_agreement_dynamic_content_mixin__copyvalue
 #: model:ir.model.fields,help:agreement_legal.field_agreement_recital__copyvalue
 #: model:ir.model.fields,help:agreement_legal.field_agreement_section__copyvalue
 msgid ""
@@ -859,6 +861,7 @@ msgstr "Opérations"
 #: model:ir.model.fields,help:agreement_legal.field_agreement__default_value
 #: model:ir.model.fields,help:agreement_legal.field_agreement_appendix__default_value
 #: model:ir.model.fields,help:agreement_legal.field_agreement_clause__default_value
+#: model:ir.model.fields,help:agreement_legal.field_agreement_dynamic_content_mixin__default_value
 #: model:ir.model.fields,help:agreement_legal.field_agreement_recital__default_value
 #: model:ir.model.fields,help:agreement_legal.field_agreement_section__default_value
 msgid "Optional value to use if the target field is empty."
@@ -937,6 +940,7 @@ msgstr "Téléphone"
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__copyvalue
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_appendix__copyvalue
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_clause__copyvalue
+#: model:ir.model.fields,field_description:agreement_legal.field_agreement_dynamic_content_mixin__copyvalue
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_recital__copyvalue
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_section__copyvalue
 msgid "Placeholder Expression"
@@ -1114,8 +1118,10 @@ msgid "Sections"
 msgstr "Sections"
 
 #. module: agreement_legal
+#: model:ir.model.fields,help:agreement_legal.field_agreement__field_id
 #: model:ir.model.fields,help:agreement_legal.field_agreement_appendix__field_id
 #: model:ir.model.fields,help:agreement_legal.field_agreement_clause__field_id
+#: model:ir.model.fields,help:agreement_legal.field_agreement_dynamic_content_mixin__field_id
 #: model:ir.model.fields,help:agreement_legal.field_agreement_recital__field_id
 #: model:ir.model.fields,help:agreement_legal.field_agreement_section__field_id
 msgid ""
@@ -1297,6 +1303,7 @@ msgstr "Sous-types"
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__sub_model_object_field_id
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_appendix__sub_model_object_field_id
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_clause__sub_model_object_field_id
+#: model:ir.model.fields,field_description:agreement_legal.field_agreement_dynamic_content_mixin__sub_model_object_field_id
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_recital__sub_model_object_field_id
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_section__sub_model_object_field_id
 msgid "Sub-field"
@@ -1306,6 +1313,7 @@ msgstr "Sous champ"
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__sub_object_id
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_appendix__sub_object_id
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_clause__sub_object_id
+#: model:ir.model.fields,field_description:agreement_legal.field_agreement_dynamic_content_mixin__sub_object_id
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_recital__sub_object_id
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement_section__sub_object_id
 msgid "Sub-model"
@@ -1518,6 +1526,11 @@ msgid "User assigned automatically the activity on review date"
 msgstr ""
 
 #. module: agreement_legal
+#: model_terms:ir.ui.view,arch_db:agreement_legal.view_project_agreement_kanban
+msgid "V:"
+msgstr ""
+
+#. module: agreement_legal
 #: model:ir.model.fields,field_description:agreement_legal.field_agreement__version
 msgid "Version"
 msgstr "Version"
@@ -1531,6 +1544,7 @@ msgstr "Version :"
 #: model:ir.model.fields,help:agreement_legal.field_agreement__sub_model_object_field_id
 #: model:ir.model.fields,help:agreement_legal.field_agreement_appendix__sub_model_object_field_id
 #: model:ir.model.fields,help:agreement_legal.field_agreement_clause__sub_model_object_field_id
+#: model:ir.model.fields,help:agreement_legal.field_agreement_dynamic_content_mixin__sub_model_object_field_id
 #: model:ir.model.fields,help:agreement_legal.field_agreement_recital__sub_model_object_field_id
 #: model:ir.model.fields,help:agreement_legal.field_agreement_section__sub_model_object_field_id
 msgid ""
@@ -1548,6 +1562,7 @@ msgstr ""
 #: model:ir.model.fields,help:agreement_legal.field_agreement__sub_object_id
 #: model:ir.model.fields,help:agreement_legal.field_agreement_appendix__sub_object_id
 #: model:ir.model.fields,help:agreement_legal.field_agreement_clause__sub_object_id
+#: model:ir.model.fields,help:agreement_legal.field_agreement_dynamic_content_mixin__sub_object_id
 #: model:ir.model.fields,help:agreement_legal.field_agreement_recital__sub_object_id
 #: model:ir.model.fields,help:agreement_legal.field_agreement_section__sub_object_id
 msgid ""
@@ -1566,15 +1581,6 @@ msgstr "Quand l'accord se termine."
 #: model:ir.model.fields,help:agreement_legal.field_agreement__start_date
 msgid "When the agreement starts."
 msgstr "Quand l'accord commence."
-
-#. module: agreement_legal
-#: model:ir.model.fields,help:agreement_legal.field_agreement__field_id
-msgid ""
-"You can select a target field from the related document model.\n"
-"        If it is a relationship field you will be able to select a target "
-"field\n"
-"        at the destination of the relationship."
-msgstr ""
 
 #. module: agreement_legal
 #. odoo-python
@@ -1612,13 +1618,26 @@ msgstr "utilisateur et image"
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_form_view
-msgid "|  Created By:"
-msgstr "| Créé par :"
+msgid ""
+"|\n"
+"                    Created By:"
+msgstr ""
 
 #. module: agreement_legal
 #: model_terms:ir.ui.view,arch_db:agreement_legal.partner_agreement_form_view
-msgid "|  Created On:"
-msgstr "| Créé le :"
+msgid ""
+"|\n"
+"                    Created On:"
+msgstr ""
+
+#~ msgid "Agreement Name"
+#~ msgstr "Nom de l'accord"
+
+#~ msgid "|  Created By:"
+#~ msgstr "| Créé par :"
+
+#~ msgid "|  Created On:"
+#~ msgstr "| Créé le :"
 
 #~ msgid "Contact"
 #~ msgstr "Contact"

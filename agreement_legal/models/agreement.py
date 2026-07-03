@@ -5,7 +5,7 @@ from datetime import timedelta
 
 from lxml import etree
 
-from odoo import _, api, fields, models
+from odoo import api, fields, models
 
 
 class Agreement(models.Model):
@@ -65,7 +65,7 @@ class Agreement(models.Model):
     code = fields.Char(
         string="Reference",
         required=True,
-        default=lambda self: _("New"),
+        default=lambda self: self.env._("New"),
         tracking=True,
         copy=False,
         help="ID used for internal contract tracking.",
@@ -213,9 +213,6 @@ class Agreement(models.Model):
         copy=False,
         domain=[("active", "=", True)],
     )
-    line_ids = fields.One2many(
-        "agreement.line", "agreement_id", string="Products/Services", copy=False
-    )
     state = fields.Selection(
         [("draft", "Draft"), ("active", "Active"), ("inactive", "Inactive")],
         default="draft",
@@ -266,7 +263,7 @@ class Agreement(models.Model):
                 agreement.activity_schedule(
                     "agreement_legal.mail_activity_review_agreement",
                     user_id=agreement.agreement_type_id.review_user_id.id,
-                    note=_("Your activity is going to end soon"),
+                    note=self.env._("Your activity is going to end soon"),
                 )
 
     @api.model
@@ -323,6 +320,20 @@ class Agreement(models.Model):
                     template.display_name,
                 )
             )
+
+    def action_open_recompute_from_template_wizard(self):
+        self.ensure_one()
+        return {
+            "name": _("Recompute From Template"),
+            "res_model": "recompute.agreement.from.template.wizard",
+            "type": "ir.actions.act_window",
+            "view_mode": "form",
+            "target": "new",
+            "context": {
+                "default_agreement_id": self.id,
+                "default_template_id": self.template_id.id,
+            },
+        }
 
     def action_open_recompute_from_template_wizard(self):
         self.ensure_one()
@@ -479,7 +490,7 @@ class Agreement(models.Model):
         """Assign a value for code is New"""
         default = dict(default or {})
         if not default.get("code", False):
-            default.setdefault("code", _("New"))
+            default.setdefault("code", self.env._("New"))
         # Prevent automatic clause copy through sections to avoid duplication.
         default.setdefault("sections_ids", [])
         res = super().copy(default)

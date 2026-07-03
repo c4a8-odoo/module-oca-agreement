@@ -12,9 +12,6 @@ access_agreement_section_manager,section manager,model_agreement_section,group_a
 access_agreement_clause_readonly,clause readonly,model_agreement_clause,group_agreement_readonly,1,0,0,0
 access_agreement_clause_allusers,clause all users,model_agreement_clause,group_agreement_user,1,1,1,1
 access_agreement_clause_manager,clause manager,model_agreement_clause,group_agreement_manager,1,1,1,1
-access_agreement_line_readonly,agreement line readonly,model_agreement_line,group_agreement_readonly,1,0,0,0
-access_agreement_line_allusers,agreement line all users,model_agreement_line,group_agreement_user,1,1,1,1
-access_agreement_line_manager,agreement line manager,model_agreement_line,group_agreement_manager,1,1,1,1
 access_agreement_recital_readonly,recital readonly,model_agreement_recital,group_agreement_readonly,1,0,0,0
 access_agreement_recital_allusers,recital all users,model_agreement_recital,group_agreement_user,1,1,1,1
 access_agreement_recital_manager,recital manager,model_agreement_recital,group_agreement_manager,1,1,1,1
