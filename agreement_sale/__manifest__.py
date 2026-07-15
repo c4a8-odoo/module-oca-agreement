@@ -12,10 +12,8 @@
     "depends": ["sale_management", "agreement"],
     "data": [
         "security/ir.model.access.csv",
-        "views/agreement_menu.xml",
         "views/agreement_view.xml",
         "views/sale_order.xml",
-        "views/res_config_settings.xml",
     ],
     "development_status": "Beta",
     "maintainers": ["alexis-via", "bealdav"],
