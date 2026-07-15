@@ -5,3 +5,5 @@ to project tasks to track the performance of an agreement.
 This module allows you to link a project task to an agreement and adds a
 smart button on the agreement to look at the list of related project
 tasks.
+
+![Agreement Form](../static/description/screenshot_form.png)

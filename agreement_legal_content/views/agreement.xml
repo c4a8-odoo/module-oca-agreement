@@ -1,0 +1,110 @@
+<odoo>
+    <!-- Add the dynamic placeholder builder + structure page to the form -->
+    <record id="partner_agreement_form_view" model="ir.ui.view">
+        <field name="name">agreement.form.dynamic.content</field>
+        <field name="model">agreement</field>
+        <field name="inherit_id" ref="agreement_legal.partner_agreement_form_view" />
+        <field name="arch" type="xml">
+            <!-- Custom parties content toggle + its conditional visibility -->
+
+            <group name="partner" position="inside">
+                <field name="use_parties_content" />
+            </group>
+
+            <group name="parties" position="after">
+                <t invisible="not use_parties_content">
+                    <!-- Dynamic placeholder builder after the description -->
+                    <group string="Custom parties content">
+                        <group>
+                            <field
+                                name="field_id"
+                                domain="[('model_id', '=', 'agreement'),
+                                            ('ttype', '!=', 'one2many'),
+                                            ('ttype', '!=', 'many2many')]"
+                            />
+                            <field name="sub_object_id" readonly="1" />
+                            <field
+                                name="sub_model_object_field_id"
+                                domain="[('model_id', '=', sub_object_id),
+                                            ('ttype', '!=', 'one2many'),
+                                            ('ttype', '!=', 'many2many')]"
+                                readonly="sub_object_id == False"
+                                required="sub_object_id != False"
+                            />
+                            <field name="default_value" />
+                            <field name="copyvalue" />
+                        </group>
+                        <group>
+                            <p>
+                                This section (on the left) allows you to add dynamic fields inside the description and special terms.
+                                <ol>
+                                <li>Select the agreement field</li>
+                                <li>Select the sub-field</li>
+                                <li>Enter the default value if the field is empty</li>
+                                <li
+                                >Copy and paste the placeholder expression in the description or the special terms</li>
+                            </ol>
+                            </p>
+                        </group>
+                    </group>
+                    <group name="parties_content">
+                        <field name="parties" />
+                    </group>
+                </t>
+            </group>
+
+            <!-- Structure page (recitals/sections/clauses/appendices) + report buttons -->
+            <xpath expr="//notebook" position="inside">
+                <page name="structure" string="Structure">
+                    <div>
+                        <button
+                            name="%(partner_agreement_contract_document_preview)d"
+                            string="Preview"
+                            type="action"
+                            class="oe_highlight mx-1"
+                        />
+                        <button
+                            name="%(partner_agreement_contract_document)d"
+                            string="Print"
+                            type="action"
+                            class="oe_highlight mx-1"
+                        />
+                    </div>
+
+                    <separator string="Recitals" />
+                    <field
+                        name="recital_ids"
+                        nolabel="1"
+                        context="{'list_view_ref': 'agreement_legal_content.agreement_recital_tree2',
+                                    'form_view_ref': 'agreement_legal_content.agreement_recital_form2'}"
+                    />
+
+                    <separator string="Sections" />
+                    <field
+                        name="sections_ids"
+                        nolabel="1"
+                        context="{'list_view_ref': 'agreement_legal_content.partner_agreement_section_list_view2',
+                                    'form_view_ref': 'agreement_legal_content.partner_agreement_section_form_view2'}"
+                    />
+
+                    <separator string="Clauses" />
+                    <field
+                        name="clauses_ids"
+                        nolabel="1"
+                        context="{'list_view_ref': 'agreement_legal_content.partner_agreement_clause_list_view2',
+                                    'form_view_ref': 'agreement_legal_content.partner_agreement_clause_form_view2',
+                                    'default_temp_agreement_id': id}"
+                    />
+
+                    <separator string="Appendices" />
+                    <field
+                        name="appendix_ids"
+                        nolabel="1"
+                        context="{'list_view_ref': 'agreement_legal_content.agreement_appendix_tree2',
+                                    'form_view_ref': 'agreement_legal_content.agreement_appendix_form2'}"
+                    />
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>
