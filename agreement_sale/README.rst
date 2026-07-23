@@ -44,7 +44,7 @@ Known issues / Roadmap
 
 Features to evaluate before implementation
 
-- add module agreement_account: agreement_sale'll depends on it
+-  add module agreement_account: agreement_sale'll depends on it
 
 Bug Tracker
 ===========
@@ -67,12 +67,12 @@ Authors
 Contributors
 ------------
 
-- Alexis de Lattre <alexis.delattre@akretion.com>
-- Italo LOPES <italo.lopes@camptocamp.com>
-- Nhan Tran <nhant@trobz.com>
-- `Komit <https://komit-consulting.com>`__:
+-  Alexis de Lattre <alexis.delattre@akretion.com>
+-  Italo LOPES <italo.lopes@camptocamp.com>
+-  Nhan Tran <nhant@trobz.com>
+-  `Komit <https://komit-consulting.com>`__:
 
-  - Vang Nguyen Phu
+   -  Vang Nguyen Phu
 
 Maintainers
 -----------
