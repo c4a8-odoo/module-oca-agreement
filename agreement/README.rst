@@ -34,19 +34,18 @@ Agreements
 
 This module adds an *Agreement* object with the following properties:
 
-- code,
-- name,
-- link to a partner,
-- signature date.
-- start date.
-- end date.
+-  code,
+-  name,
+-  link to a partner,
+-  signature date.
+-  start date.
+-  end date.
 
 Optionally, you can also enable using: \* agreement types \* a flag to
 set an agreement as a template agreement
 
-|Agreement Form|
-
-.. |Agreement Form| image:: https://raw.githubusercontent.com/OCA/agreement/19.0/agreement/static/description/screenshot_form.png
+.. image:: https://raw.githubusercontent.com/OCA/agreement/19.0/agreement/static/description/screenshot_form.png
+   :alt: Agreement Form
 
 **Table of contents**
 
@@ -75,33 +74,33 @@ Authors
 Contributors
 ------------
 
-- Alexis de Lattre <alexis.delattre@akretion.com>
+-  Alexis de Lattre <alexis.delattre@akretion.com>
 
-- Yves Goldberg <yves@ygol.com>
+-  Yves Goldberg <yves@ygol.com>
 
-- Alexandre Fayolle <alexandre.fayolle@camptocamp.com>
+-  Alexandre Fayolle <alexandre.fayolle@camptocamp.com>
 
-- `Tecnativa <https://www.tecnativa.com>`__:
+-  `Tecnativa <https://www.tecnativa.com>`__:
 
-     - Sergio Teruel
+      -  Sergio Teruel
 
-- Tharathip Chaweewongphan <tharathipc@ecosoft.co.th>
+-  Tharathip Chaweewongphan <tharathipc@ecosoft.co.th>
 
-- `Acsone <https://www.acsone.eu/>`__:
+-  `Acsone <https://www.acsone.eu/>`__:
 
-  - Maxime Franco
+   -  Maxime Franco
 
-- `Trobz <https://www.trobz.com/>`__:
+-  `Trobz <https://www.trobz.com/>`__:
 
-  - Nhan Tran <nhant@trobz.com>
+   -  Nhan Tran <nhant@trobz.com>
 
-- `Komit <https://komit-consulting.com>`__:
+-  `Komit <https://komit-consulting.com>`__:
 
-  - Vang Nguyen Phu
+   -  Vang Nguyen Phu
 
-- `glueckkanja AG <https://glueckkanja.com>`__:
+-  `glueckkanja AG <https://glueckkanja.com>`__:
 
-  - Christopher Rogos
+   -  Christopher Rogos
 
 Maintainers
 -----------
