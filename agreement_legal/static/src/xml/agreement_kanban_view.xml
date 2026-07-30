@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates>
+    <!-- Rendered in the control panel's "layout-buttons" slot via the
+         buttonTemplate override on the AgreementKanbanView. Scoped to the
+         agreement_template_kanban views only. -->
+    <t t-name="agreement_legal.KanbanViewButtons">
+        <t t-call="agreement_legal.TemplateButton" />
+    </t>
+    <!-- In Odoo 19 the "New" button (o-kanban-button-new) lives in
+         web.KanbanView. Hide it for agreement records unless we are creating
+         templates; leave every other model untouched. -->
+    <t t-inherit="web.KanbanView" t-inherit-mode="extension">
+        <xpath expr="//button[hasclass('o-kanban-button-new')]" position="attributes">
+            <attribute
+                name="t-if"
+            >canCreate and props.showButtons and (props.resModel !== 'agreement' or canCreateTemplate)</attribute>
+        </xpath>
+    </t>
+</templates>
