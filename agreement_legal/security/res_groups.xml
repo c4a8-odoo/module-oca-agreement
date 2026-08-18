@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo noupdate="1">
+    <!-- Readonly group -->
+    <record id="agreement.group_agreement_readonly" model="res.groups">
+        <field
+            name="implied_ids"
+            eval="[
+                Command.link(ref('agreement.group_use_agreement_type')),
+                Command.link(ref('agreement.group_use_agreement_template')),
+            ]"
+        />
+    </record>
+</odoo>

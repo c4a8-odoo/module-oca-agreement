@@ -1,0 +1,23 @@
+<odoo>
+    <!-- Add "Term Dates" (notices + termination) to the agreement form -->
+    <record id="partner_agreement_form_view" model="ir.ui.view">
+        <field name="name">agreement.form.termination</field>
+        <field name="model">agreement</field>
+        <field name="inherit_id" ref="agreement.agreement_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='main']/group[@name='right']" position="inside">
+                <field name="expiration_notice" />
+                <field name="change_notice" />
+                <field
+                    name="notification_address_id"
+                    domain="[('parent_id', '=', partner_id)]"
+                />
+                <field name="termination_requested" />
+                <field name="termination_date" />
+            </xpath>
+            <xpath expr="//group[@name='main']/group[@name='left']" position="inside">
+                <field name="company_id" position="move" />
+            </xpath>
+        </field>
+    </record>
+</odoo>

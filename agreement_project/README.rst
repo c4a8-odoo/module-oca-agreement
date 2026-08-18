@@ -40,6 +40,9 @@ This module allows you to link a project task to an agreement and adds a
 smart button on the agreement to look at the list of related project
 tasks.
 
+.. image:: https://raw.githubusercontent.com/OCA/agreement/19.0/agreement_project/static/description/screenshot_form.png
+   :alt: Agreement Form
+
 **Table of contents**
 
 .. contents::
@@ -50,18 +53,12 @@ Usage
 
 To use this module, you need to:
 
-- Go to Project > Configuration > Projects
-- Select or create a project and set the agreement
-- Go to Agreement > Agreements
-- Open the previous agreement
-- Click on the smart button "Tasks" to see the list of related project
-  tasks
-
-Known issues / Roadmap
-======================
-
-The roadmap of the Agreement application is documented on
-`Github <https://github.com/OCA/contract/issues>`__.
+-  Go to Project > Configuration > Projects
+-  Select or create a project and set the agreement
+-  Go to Agreement > Agreements
+-  Open the previous agreement
+-  Click on the smart button "Tasks" to see the list of related project
+   tasks
 
 Bug Tracker
 ===========
@@ -85,19 +82,19 @@ Authors
 Contributors
 ------------
 
-- Sandip Mangukiya <smangukiya@opensourceintegrators.com>
-- Yves Goldberg <yves@ygol.com>
-- Helly kapatel <helly.kapatel@initos.com>
-- `APSL-Nagarro <https://www.apsl.tech>`__:
+-  Sandip Mangukiya <smangukiya@opensourceintegrators.com>
+-  Yves Goldberg <yves@ygol.com>
+-  Helly kapatel <helly.kapatel@initos.com>
+-  `APSL-Nagarro <https://www.apsl.tech>`__:
 
-  - Antoni Marroig <amarroig@apsl.net>
+   -  Antoni Marroig <amarroig@apsl.net>
 
 Other credits
 -------------
 
 The development of this module has been financially supported by:
 
-- Open Source Integrators <https://opensourceintegrators.com>
+-  Open Source Integrators <https://opensourceintegrators.com>
 
 Maintainers
 -----------

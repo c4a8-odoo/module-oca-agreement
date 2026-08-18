@@ -7,12 +7,6 @@ from odoo import fields, models
 class ResConfigSettings(models.TransientModel):
     _inherit = "res.config.settings"
 
-    # Connect to agreement modules
-    module_agreement_project = fields.Boolean(help="Agreement on projects")
-    module_agreement_sale = fields.Boolean(help="Agreement on sales")
-    module_agreement_rebate = fields.Boolean(help="Rebate in agreements")
-    module_agreement_product = fields.Boolean(help="Agreement on products")
-
     # Extensions
     group_use_agreement_type = fields.Boolean(
         "Use agreement types", implied_group="agreement.group_use_agreement_type"
@@ -39,4 +33,35 @@ class ResConfigSettings(models.TransientModel):
     module_agreement_legal = fields.Boolean(help="Manage legal aspects of agreements")
     module_agreement_legal_content = fields.Boolean(
         help="Add legal content to agreements"
+    )
+
+    # Connect to agreement modules
+    module_agreement_rebate = fields.Boolean(help="Rebate in agreements")
+    module_agreement_product = fields.Boolean(help="Agreement on products")
+
+    module_agreement_maintenance = fields.Boolean(
+        help="Manage maintenance agreements and contracts."
+    )
+    module_agreement_mrp = fields.Boolean(
+        help="Link your manufacturing orders to an agreement."
+    )
+    module_agreement_project = fields.Boolean(
+        help="Link your projects and tasks to an agreement."
+    )
+    module_agreement_repair = fields.Boolean(
+        help="Link your repair orders to an agreement."
+    )
+    module_agreement_rma = fields.Boolean(help="Link your RMAs to an agreement.")
+    module_agreement_sale = fields.Boolean(
+        help="Create an agreement when the sale order is confirmed."
+    )
+    module_agreement_sale_subscription = fields.Boolean(
+        help="Link your subscriptions to an agreement."
+    )
+    module_agreement_stock = fields.Boolean(help="Link your pickings to an agreement.")
+    module_fieldservice_agreement = fields.Boolean(
+        help="Link your Field Service orders and equipments to an agreement."
+    )
+    module_agreement_helpdesk = fields.Boolean(
+        help="Link your Helpdesk tickets to an agreement."
     )

@@ -1,0 +1,10 @@
+<odoo>
+    <menuitem
+        name="Agreements"
+        id="agreement_agreement_reporting"
+        sequence="10"
+        groups="agreement.group_agreement_manager"
+        parent="agreement.agreement_reporting_menu"
+        action="action_agreement_report_order"
+    />
+</odoo>
