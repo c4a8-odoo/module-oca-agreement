@@ -80,12 +80,11 @@
                         </setting>
                         <setting>
                             <field name="module_agreement_legal" />
-                            <div class="text-muted
-">
+                            <div class="text-muted">
                                 Manage legal aspects of agreements
                             </div>
                         </setting>
-                        <setting>
+                        <setting invisible="not module_agreement_legal">
                             <field name="module_agreement_legal_content" />
                             <div class="text-muted">
                                 Add legal content to agreements
@@ -94,15 +93,63 @@
                     </block>
                     <block title="Connections">
                         <setting>
-                            <field name="module_agreement_project" />
+                            <field name="module_agreement_sale" />
                             <div class="text-muted">
-                                Link projects to an agreement
+                                Create an agreement when the sales order is confirmed
+                            </div>
+                        </setting>
+                        <setting invisible="not module_agreement_sale">
+                            <field name="module_agreement_sale_subscription" />
+                            <div class="text-muted">
+                                Link your subscriptions to an agreement
                             </div>
                         </setting>
                         <setting>
-                            <field name="module_agreement_sale" />
+                            <field name="module_fieldservice_agreement" />
                             <div class="text-muted">
-                                Agreement on sales
+                                Link your Field Service orders and equipments to an agreement
+                            </div>
+                        </setting>
+                        <setting>
+                            <field name="module_agreement_stock" />
+                            <div class="text-muted">
+                                Link your transfers to an agreement
+                            </div>
+                        </setting>
+                        <setting>
+                            <field name="module_agreement_rma" />
+                            <div class="text-muted">
+                                Link your returns to an agreement
+                            </div>
+                        </setting>
+                        <setting>
+                            <field name="module_agreement_maintenance" />
+                            <div class="text-muted">
+                                Manage maintenance agreements and contracts
+                            </div>
+                        </setting>
+                        <setting>
+                            <field name="module_agreement_mrp" />
+                            <div class="text-muted">
+                                Link your manufacturing orders to an agreement
+                            </div>
+                        </setting>
+                        <setting>
+                            <field name="module_agreement_repair" />
+                            <div class="text-muted">
+                                Link your repair orders to an agreement
+                            </div>
+                        </setting>
+                        <setting>
+                            <field name="module_agreement_project" />
+                            <div class="text-muted">
+                                Link your projects and tasks to an agreement
+                            </div>
+                        </setting>
+                        <setting>
+                            <field name="module_agreement_helpdesk" />
+                            <div class="text-muted">
+                                Link your Helpdesk tickets to an agreement
                             </div>
                         </setting>
                         <setting>
