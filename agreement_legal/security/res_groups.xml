@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="res_groups_privilege_agreement_legal" model="res.groups.privilege">
+        <field name="name">Agreement</field>
+        <field name="sequence">17</field>
+    </record>
+
+    <!-- Readonly group -->
+    <record id="group_agreement_readonly" model="res.groups">
+        <field name="name">Read-Only Users</field>
+        <field
+            name="privilege_id"
+            ref="agreement_legal.res_groups_privilege_agreement_legal"
+        />
+        <field
+            name="implied_ids"
+            eval="[
+                Command.link(ref('base.group_user')),
+                Command.link(ref('agreement.group_use_agreement_type')),
+                Command.link(ref('agreement.group_use_agreement_template')),
+            ]"
+        />
+    </record>
+
+    <!-- User group -->
+    <record id="group_agreement_user" model="res.groups">
+        <field name="name">User</field>
+        <field
+            name="privilege_id"
+            ref="agreement_legal.res_groups_privilege_agreement_legal"
+        />
+        <field
+            name="implied_ids"
+            eval="[Command.link(ref('group_agreement_readonly'))]"
+        />
+    </record>
+
+    <!-- Manager group -->
+    <record id="group_agreement_manager" model="res.groups">
+        <field name="name">Manager</field>
+        <field
+            name="privilege_id"
+            ref="agreement_legal.res_groups_privilege_agreement_legal"
+        />
+        <field name="implied_ids" eval="[Command.link(ref('group_agreement_user'))]" />
+        <field
+            name="user_ids"
+            eval="[
+                Command.link(ref('base.user_root')),
+                Command.link(ref('base.user_admin')),
+            ]"
+        />
+    </record>
+</odoo>
