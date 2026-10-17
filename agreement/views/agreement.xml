@@ -36,6 +36,7 @@
                                 invisible="not commercial_partner_id or commercial_partner_id == partner_id"
                             />
                             <field name="partner_id" required="not is_template" />
+                            <field name="user_id" widget="many2one_avatar_user" />
                             <field
                                 name="agreement_type_id"
                                 groups="agreement.group_use_agreement_type"
@@ -73,6 +74,7 @@
                 <field name="commercial_partner_id" optional="hide" />
                 <field name="code" />
                 <field name="name" />
+                <field name="user_id" widget="many2one_avatar_user" />
                 <field name="signature_date" />
                 <field name="start_date" />
                 <field name="end_date" />
@@ -92,6 +94,12 @@
                     string="Name or Number"
                 />
                 <field name="partner_id" />
+                <field name="user_id" />
+                <filter
+                    name="my_agreements"
+                    string="My Agreements"
+                    domain="[('user_id', '=', uid)]"
+                />
                 <separator />
                 <filter name="sale" string="Sale" domain="[('domain', '=', 'sale')]" />
                 <filter
@@ -106,6 +114,11 @@
                     domain="[('active', '=', False)]"
                 />
                 <group name="groupby">
+                    <filter
+                        name="user_groupby"
+                        string="Responsible"
+                        context="{'group_by': 'user_id'}"
+                    />
                     <filter
                         name="partner_groupby"
                         string="Partner"
