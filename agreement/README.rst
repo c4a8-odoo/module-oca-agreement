@@ -125,22 +125,6 @@ Go to *Agreements > Configuration > Settings* (Manager role required).
 -  *Connections* lets you install the modules linking agreements to
    projects, sales, rebates and products.
 
-Agreements of contacts on the partner form
-------------------------------------------
-
-By default, the *Agreements* smart button on the partner form only shows
-the agreements linked directly to that partner. To also show the
-agreements of its contacts on a company, go to *Agreements >
-Configuration > Settings* and check *Show Agreements of Child Contacts*
-in *Advanced Features*.
-
-The smart button of a company then counts and opens its own agreements
-and the agreements of all its contacts. The smart button of a contact
-still shows only the agreements of that contact.
-
-The setting is stored in the system parameter
-``agreement.partner_show_child_agreements`` (``True`` or ``False``).
-
 Agreement types
 ---------------
 
@@ -188,9 +172,7 @@ column is optional and can be shown from the column selector.
 
 On the partner form, the *Agreements* smart button shows the number of
 agreements linked directly to that partner and opens them. A new
-agreement created from there is pre-filled with the partner. The smart
-button can also include the agreements of the partner's contacts, see
-*Configuration*.
+agreement created from there is pre-filled with the partner.
 
 .. image:: https://raw.githubusercontent.com/OCA/agreement/19.0/agreement/static/description/screenshot_partner.png
    :alt: Agreements smart button on the partner form
